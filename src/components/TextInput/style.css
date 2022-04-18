@@ -1,0 +1,8 @@
+.breaking-bad-text-input__label{
+    margin-right: 5px;
+}
+.breaking-bad-text-input input {
+    border: 2px solid #40cfff;
+    border-radius: 30px;
+    padding: 5px;
+}

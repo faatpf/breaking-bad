@@ -1,17 +1,16 @@
 import React from "react";
+import './style.css'
 
 /**
  * @interface TextInputProps  TextInput Component Props
  */
 interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
-  /* input related Props */
   id?: string;
   label?: string;
   placeholder?: string;
   type?: "text" | "password" | "number";
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onBlur?: (e: React.FormEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
-  /* style related Props */
   className?: string;
   containerClassName?: string;
 }
@@ -33,9 +32,13 @@ const TextInput: React.FC<TextInputProps> = (props: TextInputProps) => {
   } = props;
 
   return (
-    <div className={`breaking-bad-text-input ${className}`.trim()}>
+    <div
+      className={`breaking-bad-text-input${className ? ` ${className}` : ""}`}
+    >
       <div
-        className={`breaking-bad-text-input-label__container ${containerClassName}`.trim()}
+        className={`breaking-bad-text-input-label__container${
+          containerClassName ? ` ${containerClassName}` : ""
+        }`}
       >
         {label && (
           <label htmlFor={id} className={`breaking-bad-text-input__label`}>

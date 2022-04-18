@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import Card from "src/components/Card";
 import Button from "src/components/Button";
+import Loader from "src/components/Loader";
 import { useFetch } from "src/utils/useFetch";
 import { CharacterQuote } from "src/utils/types";
+import "./style.css";
 
 /**
  * @interface QuotesProps  Quotes Props
@@ -29,11 +31,31 @@ const Quotes: React.FC<QuotesProps> = (props: QuotesProps) => {
 
   return (
     <div className="breaking-bad-quotes">
-      {loading && <div>loading ...</div>}
-      {!loading && !error && <Card description={[quote[0]?.quote]} />}
+      <div className="breaking-bad-quotes__description">{`Quote from ${characterName}`}</div>
+
+      {loading && <Loader />}
+
+      {error && (
+        <div className="breaking-bad-quotes__error">
+          {"Oops! an error has occurred."}
+        </div>
+      )}
+
+      {quote.length === 0 && (
+        <div className="breaking-bad-home__error">{`No quote found from ${characterName}`}</div>
+      )}
+
+      {!loading && !error && quote.length > 0 && (
+        <Card
+          description={[quote[0]?.quote]}
+          className="breaking-bad-quotes__card"
+        />
+      )}
+
       <Button
-        title={`Another quote from ${characterName}`}
+        title={`Another Quote`}
         onClick={() => setNewQuotes((pre) => !pre)}
+        containerClassName="breaking-bad-quotes__btn"
       />
     </div>
   );

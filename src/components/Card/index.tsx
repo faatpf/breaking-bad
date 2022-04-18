@@ -7,6 +7,7 @@ import "./style.css";
 interface CardProps {
   src?: string;
   description: Array<string>;
+  className?: string;
 }
 /**
  * @name Card
@@ -14,9 +15,9 @@ interface CardProps {
  * @param props
  */
 const Card: React.FC<CardProps> = (props: CardProps) => {
-  const { src, description } = props;
+  const { src, description, className } = props;
   return (
-    <div className="breaking-bad-card">
+    <div className={`breaking-bad-card${className ? ` ${className}` : ""}`}>
       {src && (
         <img
           className="breaking-bad-card__img"
