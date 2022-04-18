@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { debounce } from "lodash";
 import Card from "src/components/Card";
 import TextInput from "src/components/TextInput";
@@ -24,8 +25,7 @@ const HomePage: React.FC<HomePageProps> = (props: HomePageProps) => {
   const [sortBy, setSortBy] = useState<string>("name");
   const [sortOrderAscending, setSortOrderAscending] = useState<boolean>(true);
   const [data, setData] = useState([]);
-
-  const [characters, error, loading] = useFetch<Characters>(
+  const [characters, error, loading] = useFetch<Array<Characters>>(
     `https://www.breakingbadapi.com/api/characters${
       filter ? `?name=${filter}` : ""
     }`,
@@ -76,13 +76,6 @@ const HomePage: React.FC<HomePageProps> = (props: HomePageProps) => {
     if (!loading && !error) setData(characters);
   }, [characters]);
 
-  useEffect(() => {
-    if (/\s/g.test(filter)) {
-      const filterWithSpace = filter.split(" ").join("+");
-      setFilter(filterWithSpace);
-    }
-  }, [filter]);
-
   const handleClickBtn = () => {
     setSortOrderAscending((pre) => !pre);
   };
@@ -110,16 +103,18 @@ const HomePage: React.FC<HomePageProps> = (props: HomePageProps) => {
         !error &&
         data &&
         data.map((character) => (
-          <Card
-            key={character.char_id}
-            src={character.img}
-            description={[
-              character.name,
-              character.nickname,
-              character.birthday,
-              character.status,
-            ]}
-          />
+          <Link to="/quotes" state={{ name: character.name }}>
+            <Card
+              key={character.char_id}
+              src={character.img}
+              description={[
+                character.name,
+                character.nickname,
+                character.birthday,
+                character.status,
+              ]}
+            />
+          </Link>
         ))}
     </div>
   );
