@@ -1,9 +1,9 @@
 import React from "react";
 
 /**
- * @interface TextInput Component TextInput Props
+ * @interface TextInputProps  TextInput Component Props
  */
-interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
+interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
   /* input related Props */
   id?: string;
   label?: string;
@@ -17,10 +17,10 @@ interface ITextInputProps extends React.HTMLProps<HTMLInputElement> {
 }
 
 /**
- * @description TextInput
- * @param props: ITextInputProps
+ * @description TextInput component
+ * @param props: TextInputProps
  */
-const TextInput: React.FC<ITextInputProps> = (props: ITextInputProps) => {
+const TextInput: React.FC<TextInputProps> = (props: TextInputProps) => {
   const {
     id,
     label,
