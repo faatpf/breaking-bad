@@ -13,8 +13,8 @@ interface UseFetchOption<T = any, E = ErrorDTO> {
 export function useFetch<T = any, E = ErrorDTO>(
     url:string,
     method:'GET'| 'PUT'| 'DLETE'|'POST',
-    body?:{},
     depend: Array<any> = [],
+    body?:{},
     initial: T = {} as T,
     option: UseFetchOption<T, E> = {}
   ): [T, E, boolean] {

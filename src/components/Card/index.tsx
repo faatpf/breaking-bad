@@ -2,9 +2,9 @@ import React from "react";
 import './style.css'
 
 /**
- * @interface CardP component Card
+ * @interface CardProps component Card Props
  */
-interface CardP {
+interface CardProps {
   src: string;
   description: Array<string>;
 }
@@ -13,7 +13,7 @@ interface CardP {
  * @description Card component
  * @param props
  */
-const Card: React.FC<CardP> = (props: CardP) => {
+const Card: React.FC<CardProps> = (props: CardProps) => {
   const { src,description } = props;
   return (
     <div className="breaking-bad-card">
