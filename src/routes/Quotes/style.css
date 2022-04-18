@@ -1,0 +1,15 @@
+.breaking-bad-quotes{
+    text-align: center;
+} 
+
+.breaking-bad-quotes__description {
+    margin-bottom:15px;
+}
+
+.breaking-bad-quotes__card{
+    margin: 0 auto;
+}
+
+.breaking-bad-quotes__btn{
+    margin-top: 10px;
+}

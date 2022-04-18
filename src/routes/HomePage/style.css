@@ -1,0 +1,45 @@
+.breaking-bad-home__input {
+  display: flex;
+  justify-content: center;
+}
+
+.breaking-bad-home__sort {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+  margin: 20px 0;
+}
+
+.breaking-bad-home__error{
+    display: flex;
+    justify-content: center;
+}
+
+.breaking-bad-home__loader{
+    position: absolute;
+    right: 50%;
+    top:50%;
+    transform: translate(50%,-50%);
+}
+
+.breaking-bad-home__characters {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  row-gap: 40px;
+  margin-top: 20px;
+}
+.breaking-bad-home__characters a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.breaking-bad-home__card {
+  transition: trasform 0.5s;
+}
+
+.breaking-bad-home__card:hover {
+  transform: scale(1.03);
+}
