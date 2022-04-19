@@ -23,6 +23,7 @@ const Quotes: React.FC<QuotesProps> = (props: QuotesProps) => {
   const state = location.state as any;
   const characterName = state.name;
   const [newQuote, setNewQuotes] = useState<boolean>(false);
+  
   const [quote, error, loading] = useFetch<Array<CharacterQuote>>(
     `https://www.breakingbadapi.com/api/quote/random?author=${characterName}`,
     "GET",
@@ -31,7 +32,7 @@ const Quotes: React.FC<QuotesProps> = (props: QuotesProps) => {
 
   return (
     <div className="breaking-bad-quotes">
-      <div className="breaking-bad-quotes__description">{`Quote from ${characterName}`}</div>
+      <h1 className="breaking-bad-quotes__heading">{`Quote from ${characterName}`}</h1>
 
       {loading && <Loader />}
 

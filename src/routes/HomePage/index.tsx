@@ -41,7 +41,7 @@ const HomePage: React.FC<HomePageProps> = (props: HomePageProps) => {
    */
   const sortByName = () => {
     const newData = [...data];
-    
+
     newData.sort((a, b) => {
       const nameA = a[sortBy].toUpperCase();
       const nameB = b[sortBy].toUpperCase();
@@ -105,6 +105,8 @@ const HomePage: React.FC<HomePageProps> = (props: HomePageProps) => {
 
   return (
     <div className="breaking-bad-home">
+      <h1 className="breaking-bad-home__heading">Breaking Bad Series Characters</h1>
+
       <TextInput
         onChange={debounce((e) => {
           const target = e.target as HTMLInputElement;

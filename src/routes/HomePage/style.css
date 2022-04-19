@@ -1,3 +1,7 @@
+.breaking-bad-home__heading{
+  text-align: center;
+}
+
 .breaking-bad-home__input {
   display: flex;
   justify-content: center;
@@ -31,6 +35,7 @@
   row-gap: 40px;
   margin-top: 20px;
 }
+
 .breaking-bad-home__characters a {
   text-decoration: none;
   color: #000000;
