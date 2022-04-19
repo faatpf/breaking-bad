@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "src/routes/HomePage";
-import Quotes from "src/routes/Quotes";
+import HomePage from '../src/routes/HomePage'
+import Quotes from "../src/routes/Quotes";
 import "./index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

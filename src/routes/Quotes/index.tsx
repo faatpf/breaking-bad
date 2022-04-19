@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import Card from "src/components/Card";
-import Button from "src/components/Button";
-import Loader from "src/components/Loader";
-import { useFetch } from "src/utils/useFetch";
-import { CharacterQuote } from "src/utils/types";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
+import Loader from "../../components/Loader";
+import { useFetch } from "../../utils/useFetch";
+import { CharacterQuote } from "../../utils/types";
 import "./style.css";
 
 /**

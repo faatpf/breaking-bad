@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { debounce } from "lodash";
-import Card from "src/components/Card";
-import TextInput from "src/components/TextInput";
-import DropDown from "src/components/DropDown";
-import Button from "src/components/Button";
-import Loader from "src/components/Loader";
+import Card from "../../components/Card";
+import TextInput from "../../components/TextInput";
+import DropDown from "../../components/DropDown";
+import Button from "../../components/Button";
+import Loader from "../../components/Loader";
 import { useFetch } from "../../utils/useFetch";
 import { Characters } from "../../utils/types";
 import "./style.css";
